@@ -1,0 +1,23 @@
+<h1>Listado de revisiones</h1>
+
+<table>
+  <tr>
+    <th>Comentario</th>
+    <th>Sugerencia</th>
+    <th>Comentario de Empresa</th>
+    <th></th>
+  </tr>
+
+<% @revisions.each do |revision| %>
+  <tr>
+    <td><%= revision.comment %></td>
+    <td><%= revision.suggestion %></td>
+    <td><%= revision.company_comment %></td>
+    <td><%= link_to 'Mostrar', revision %><br /><%= link_to 'Editar', edit_revision_path(revision) %><br /><%= link_to 'Destruir', revision, confirm: 'Está seguro?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Nueva revisión', new_revision_path %>

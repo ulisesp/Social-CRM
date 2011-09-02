@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Comentario:</b>
+  <%= @revision.comment %>
+</p>
+
+<p>
+  <b>Sugerencia:</b>
+  <%= @revision.suggestion %>
+</p>
+
+<p>
+  <b>Comentario de Empresa:</b>
+  <%= @revision.company_comment %>
+</p>
+
+<%= link_to 'Editar', edit_revision_path(@revision) %> |
+<%= link_to 'Atrás', revisions_path %>

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  comment: MyText
+  suggestion: MyText
+  company_comment: MyText
+  state: false
+
+two:
+  comment: MyText
+  suggestion: MyText
+  company_comment: MyText
+  state: false
