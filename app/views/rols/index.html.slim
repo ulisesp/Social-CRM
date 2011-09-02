@@ -1,0 +1,19 @@
+h1 Listing rols
+
+table
+  tr
+    th Name
+    th
+    th
+    th
+
+  - @rols.each do |rol|
+    tr
+      td= rol.name
+      td= link_to 'Show', rol
+      td= link_to 'Edit', edit_rol_path(rol)
+      td= link_to 'Destroy', rol, :confirm => 'Are you sure?', :method => :delete
+
+br
+
+= link_to 'New Rol', new_rol_path
