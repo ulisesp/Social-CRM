@@ -1,0 +1,26 @@
+= form_for(@revision) do |f| 
+  - if @revision.errors.any? 
+    #error_explanation
+      h2
+        = pluralize(@revision.errors.count, "error")  
+        |  prohiben que esta revisi&oacute;n sea almacenada:
+      ul
+        - @revision.errors.full_messages.each do |msg|
+          li
+            = msg
+  .formato_crear_comentario
+    .label
+      = f.label :comment, "Comentario", :class => "label_comentario"
+      = f.label :suggestion, "Sugerencia", :class => "label_sugerencia"
+	  = f.label :company_comment, "Comentario de Empresa", :class => "label_coment_empresa"
+
+    .field
+      = f.text_area :comment
+    .field
+      = f.text_area :suggestion
+  
+    .field
+      = f.text_area :company_comment
+  
+  .actions
+    = f.submit "Crear", :class => "boton_crear"

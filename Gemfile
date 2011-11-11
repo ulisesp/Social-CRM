@@ -8,6 +8,15 @@ gem 'rails', '3.1.0'
 gem 'sqlite3'
 gem 'mysql2'
 
+gem 'slim'
+
+gem 'guard'
+gem 'rb-fsevent'
+gem 'growl_notify'
+gem 'guard-livereload'
+
+gem 'heroku'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

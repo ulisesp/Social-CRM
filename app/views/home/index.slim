@@ -1,0 +1,21 @@
+- if !user_signed_in?
+  #homePage
+    h3.signInLabel
+      | Sign in
+
+    = form_for(@login_resource, :as => "user", :url => session_path("user")) do |f|
+      = f.label :email, :class => 'email_label'
+      br
+      = f.email_field :email, :class => 'email_input'
+      br
+      = f.label :password, :class => 'pass_label'
+      br
+      = f.password_field :password, :class => 'pass_input'
+      br 
+      br
+      p.button_sing_in
+        = link_to "Olvidaste tu contraseña?", "/", :class => 'olvidate_contrasena'
+        = f.submit "Entrar"
+
+- else
+  = render 'layouts/menu'

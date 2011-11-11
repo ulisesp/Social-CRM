@@ -11,13 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110902222524) do
+ActiveRecord::Schema.define(:version => 20110902231727) do
 
   create_table "revisions", :force => true do |t|
     t.text     "comment"
     t.text     "suggestion"
     t.text     "company_comment"
     t.boolean  "state"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "rols", :force => true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
