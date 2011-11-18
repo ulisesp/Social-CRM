@@ -5,7 +5,7 @@ gem 'rails', '3.1.0'
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+
 gem 'mysql2'
 gem 'pg'
 
@@ -39,6 +39,7 @@ gem "slim-rails"
 # gem 'capistrano'
 
 group :development do
+  gem 'sqlite3'
   gem 'guard'
   gem 'rb-fsevent'
   gem 'growl_notify'

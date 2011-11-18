@@ -46,8 +46,8 @@ test: &test
 #  socket: /var/run/mysqld/mysqld.sock
 
 production:
-  adapter: sqlite3
-  database: db/production.sqlite3
+  adapter: postgresql
+  database: db/production
   pool: 5
   timeout: 5000
 
