@@ -1,0 +1,21 @@
+p#notice
+  = notice
+
+p
+  b
+    | Comentario:
+  = @revision.comment
+
+p
+  b
+    | Sugerencia:
+  = @revision.suggestion
+
+p
+  b
+    | Comentario de Empresa:
+  = @revision.company_comment
+
+= link_to 'Editar', edit_revision_path(@revision)
+| |
+= link_to 'Atrás', revisions_path

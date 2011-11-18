@@ -18,6 +18,10 @@ a:hover {
 	text-decoration: underline;
 }
 
+#contentWrapper {
+	overflow: hidden;
+}
+
 .titulo {
 	font-size: 20px;
 	padding: 15px 0px;
@@ -173,4 +177,39 @@ a:hover {
 	height: 35px;
 	color: white;
 	font-size: 14px;
+}
+
+.info {
+	background-color: #e5e5e5;
+}
+
+.resultadosComentarios {
+	text-align: center;
+}
+
+.resultadosComentarios tr th {
+	width: 400px;
+	height: 40px;
+}
+
+.resultadosComentarios tr td {
+	height: 200px;
+	margin: -10px;
+}
+
+#footerWrapper {
+	background-color: #000;
+	color: #fff;
+	height: 100px;
+	overflow: hidden;
+}
+
+#footerContent {
+	width: 700px;
+	margin: 30px auto;
+	text-align: center;
+}
+
+.pernix a {
+	color: #0066CC;
 }

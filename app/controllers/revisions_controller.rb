@@ -46,6 +46,7 @@ class RevisionsController < ApplicationController
       if @revision.save
         format.html { redirect_to @revision, notice: 'Entrada creada exitosamente.' }
         format.json { render json: @revision, status: :created, location: @revision }
+        redirect_to :controller => "home"
       else
         format.html { render action: "new" }
         format.json { render json: @revision.errors, status: :unprocessable_entity }

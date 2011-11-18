@@ -7,4 +7,17 @@ html
     = csrf_meta_tags
   body
     = render 'layouts/header'
-    = yield
+    #contentWrapper
+      = yield
+    = render 'layouts/footer'
+
+
+javascript:
+  $(document).ready(function() {
+    var windows_height = $(window).height()-65-120-68;
+    $('#contentWrapper').attr("style", 'min-height:' + windows_height + 'px');
+  });
+  $(window).resize(function() {
+    var windows_height = $(window).height()-65-120-68;
+    $('#contentWrapper').attr("style", 'min-height:' + windows_height + 'px');
+  });

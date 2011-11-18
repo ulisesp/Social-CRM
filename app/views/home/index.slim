@@ -19,3 +19,28 @@
 
 - else
   = render 'layouts/menu'
+  
+  table.resultadosComentarios
+    tr
+      th
+        | Comentario
+      th
+        | Sugerencia
+      th
+        | Comentario de Empresa
+      th colspan="3"
+
+    - @revisions.each do |revision|
+      tr.info
+        td
+          = revision.comment
+        td
+          = revision.suggestion
+        td
+          = revision.company_comment
+        td
+          = link_to 'Mostrar', revision 
+        td
+          = link_to 'Editar', edit_revision_path(revision) 
+        td
+          = link_to 'Destruir', revision, confirm: 'Está seguro?', method: :delete
