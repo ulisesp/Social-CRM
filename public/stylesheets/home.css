@@ -1,0 +1,215 @@
+body {
+	margin: 0px;
+	padding: 0px;
+	font-family: Arial;
+	font-size: 14px;
+}
+
+h1, h2, h3, input {
+	margin: 0px;
+	padding: 0px;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+#contentWrapper {
+	overflow: hidden;
+}
+
+.titulo {
+	font-size: 20px;
+	padding: 15px 0px;
+}
+
+.menu_links {
+	color: red;
+}
+
+#header_wrapper {
+	background-image: url('/assets/images/skyline.gif');
+	height: 65px;
+	overflow: hidden;
+}
+
+#inner_header {
+	background-color: black;
+	margin-top: -1px;
+	padding: 0px;
+	border-bottom: 13px red solid;
+	overflow: hidden;
+}
+
+.textHeader {
+	margin: 0px 15px;
+	padding: 0px;
+	color: #999;
+	font-size: 35px;
+	margin-top: 28px;
+	float: left;
+}
+
+.log_out {
+	margin: 45px 130px 0px;
+	font-size: 15px;
+	font-weight: normal;
+	float: right;
+}
+
+.log_out_link {
+	color: #ccc;
+}
+
+.logoHydra {
+	float: left;
+	margin: 10px 25px 15px;
+}
+
+#homePage {
+	max-width: 300px;
+	margin: 150px auto;
+	overflow: hidden;
+}
+
+.signInLabel {
+	margin: 20px 0px;
+}
+
+.email_label {
+	font-size: 14px;
+}
+
+.email_input {
+	font-size: 14px;
+}
+
+.pass_label {
+	font-size: 14px;
+}
+
+.email_input {
+	width: 295px;
+	height: 20px;
+	margin: 20px 0px;
+}
+
+.pass_input {
+	width: 295px;
+	height: 20px;
+	margin: 20px 0px;
+}
+
+.olvidate_contrasena {
+	font-size: 12px;
+	float: left;
+	color: #666;
+}
+
+.button_sing_in input {
+	width: 75px;
+	float: right;
+	font-family: Arial;
+	line-height: 18px;
+}
+
+.menu_principal {
+	list-style: none;
+	margin-top: 50px;
+	overflow: hidden;
+	font-size: 17px;
+	font-weight: bold;
+}
+
+.espaciado_menu_item {
+	margin-left: 80px;
+}
+
+.menu_item {
+	float: left;
+}
+
+.imagen_menu {
+	margin: 1px 7px 0px 0px;
+}
+
+#nuevo_comentario {
+	margin-top: 30px;
+	margin-left: 40px;
+	overflow: hidden;
+}
+.formato_crear_comentario {
+	overflow: hidden;
+	width: 1050px;
+}
+.field {
+	float: left;
+	padding: 25px 25px;
+	background-color: #e5e5e5;
+}
+.label {
+	padding: 40px 0px 20px 0px;
+	font-weight: bold;
+}
+.label_comentario {
+	margin-left: 25px;
+}
+.label_sugerencia {
+	margin-left: 275px;
+}
+.label_coment_empresa {
+	margin-left: 275px;
+}
+.actions {
+	float: right;
+	margin-top: 20px;
+	margin-bottom: 25px;
+	
+}
+.boton_crear {
+	background-color: #c20000;
+	border: none;
+	width: 90px;
+	height: 35px;
+	color: white;
+	font-size: 14px;
+}
+
+.info {
+	background-color: #e5e5e5;
+}
+
+.resultadosComentarios {
+	text-align: center;
+}
+
+.resultadosComentarios tr th {
+	width: 400px;
+	height: 40px;
+}
+
+.resultadosComentarios tr td {
+	height: 200px;
+	margin: -10px;
+}
+
+#footerWrapper {
+	background-color: #000;
+	color: #fff;
+	height: 100px;
+	overflow: hidden;
+}
+
+#footerContent {
+	width: 700px;
+	margin: 30px auto;
+	text-align: center;
+}
+
+.pernix a {
+	color: #0066CC;
+}
