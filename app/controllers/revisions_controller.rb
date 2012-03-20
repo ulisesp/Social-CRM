@@ -44,9 +44,8 @@ class RevisionsController < ApplicationController
 
     respond_to do |format|
       if @revision.save
-        format.html { redirect_to @revision, notice: 'Entrada creada exitosamente.' }
+        format.html { redirect_to root_path, notice: 'Entrada creada exitosamente.' }
         format.json { render json: @revision, status: :created, location: @revision }
-        redirect_to :controller => "home"
       else
         format.html { render action: "new" }
         format.json { render json: @revision.errors, status: :unprocessable_entity }
@@ -61,7 +60,7 @@ class RevisionsController < ApplicationController
 
     respond_to do |format|
       if @revision.update_attributes(params[:revision])
-        format.html { redirect_to @revision, notice: 'Entrada actualizada exitosamente.' }
+        format.html { redirect_to root_path, notice: 'Entrada actualizada exitosamente.' }
         format.json { head :ok }
       else
         format.html { render action: "edit" }
@@ -77,7 +76,7 @@ class RevisionsController < ApplicationController
     @revision.destroy
 
     respond_to do |format|
-      format.html { redirect_to revisions_url }
+      format.html { redirect_to root_path }
       format.json { head :ok }
     end
   end
