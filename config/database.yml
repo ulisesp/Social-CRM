@@ -36,20 +36,20 @@ test: &test
   pool: 5
   timeout: 5000
 
-#production:
-#  adapter: mysql2
-#  encoding: utf8
-#  database: comentarios_production
-#  pool: 5
-#  username: root
-#  password: admin
-#  socket: /var/run/mysqld/mysqld.sock
-
 production:
-  adapter: postgresql
-  database: db/production
+  adapter: mysql2
+  encoding: utf8
+  database: comentarios_production
   pool: 5
-  timeout: 5000
+  username: root
+  password: MysqlPernix
+  socket: /var/run/mysqld/mysqld.sock
+
+#production:
+#  adapter: postgresql
+#  database: db/production
+#  pool: 5
+#  timeout: 5000
 
 cucumber:
   <<: *test
