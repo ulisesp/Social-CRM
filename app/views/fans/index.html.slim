@@ -1,0 +1,27 @@
+h1 Listing fans
+
+table
+  tr
+    th New
+    th Total
+    th Goal
+    th Id soc net
+    th Id client
+    th
+    th
+    th
+
+  - @fans.each do |fan|
+    tr
+      td= fan.new
+      td= fan.total
+      td= fan.goal
+      td= fan.id_soc_net
+      td= fan.id_client
+      td= link_to 'Show', fan
+      td= link_to 'Edit', edit_fan_path(fan)
+      td= link_to 'Destroy', fan, :confirm => 'Are you sure?', :method => :delete
+
+br
+
+= link_to 'New Fan', new_fan_path

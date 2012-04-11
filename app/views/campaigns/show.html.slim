@@ -1,0 +1,21 @@
+p#notice = notice
+
+p
+  b Start date:
+  = @campaign.start_date
+p
+  b End date:
+  = @campaign.end_date
+p
+  b Id client:
+  = @campaign.id_client
+p
+  b Id soc net:
+  = @campaign.id_soc_net
+p
+  b Fan:
+  = @campaign.fan_id
+
+= link_to 'Edit', edit_campaign_path(@campaign)
+'|
+= link_to 'Back', campaigns_path

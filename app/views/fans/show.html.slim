@@ -1,0 +1,21 @@
+p#notice = notice
+
+p
+  b New:
+  = @fan.new
+p
+  b Total:
+  = @fan.total
+p
+  b Goal:
+  = @fan.goal
+p
+  b Id soc net:
+  = @fan.id_soc_net
+p
+  b Id client:
+  = @fan.id_client
+
+= link_to 'Edit', edit_fan_path(@fan)
+'|
+= link_to 'Back', fans_path

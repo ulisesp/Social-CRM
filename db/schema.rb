@@ -11,7 +11,27 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110902231727) do
+ActiveRecord::Schema.define(:version => 20120411214144) do
+
+  create_table "campaigns", :force => true do |t|
+    t.date     "start_date"
+    t.date     "end_date"
+    t.integer  "id_client"
+    t.integer  "id_soc_net"
+    t.integer  "fan_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "fans", :force => true do |t|
+    t.integer  "new"
+    t.integer  "total"
+    t.integer  "goal"
+    t.integer  "id_soc_net"
+    t.integer  "id_client"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "revisions", :force => true do |t|
     t.text     "comment"

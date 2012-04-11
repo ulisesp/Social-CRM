@@ -4,10 +4,10 @@ gem 'rails', '3.1.0'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
-
+gem "therubyracer", :require => 'v8'
 
 gem 'mysql2'
-gem 'pg'
+#gem 'pg'
 
 gem 'slim'
 
@@ -41,8 +41,8 @@ gem "slim-rails"
 group :development do
   gem 'sqlite3'
   gem 'guard'
-  gem 'rb-fsevent'
-  gem 'growl_notify'
+  #gem 'rb-fsevent'
+  #gem 'growl_notify'
   gem 'guard-livereload'
   #gem 'ruby-debug19', :require => 'ruby-debug'
 end

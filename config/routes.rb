@@ -1,5 +1,9 @@
 DemoComentarios::Application.routes.draw do
 
+  resources :campaigns
+
+  resources :fans
+
   resources :rols
 
   root :to => "home#index"

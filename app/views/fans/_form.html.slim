@@ -1,0 +1,25 @@
+= form_for @fan do |f|
+  -if @fan.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@fan.errors.count, "error")} prohibited this fan from being saved:"
+      ul
+        - @fan.errors.full_messages.each do |msg|
+          li= msg
+
+  .field
+    = f.label :new
+    = f.number_field :new
+  .field
+    = f.label :total
+    = f.number_field :total
+  .field
+    = f.label :goal
+    = f.number_field :goal
+  .field
+    = f.label :id_soc_net
+    = f.number_field :id_soc_net
+  .field
+    = f.label :id_client
+    = f.number_field :id_client
+  .actions
+    = f.submit 'Save'
