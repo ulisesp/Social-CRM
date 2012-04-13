@@ -1,0 +1,12 @@
+p#notice = notice
+
+p
+  b Name:
+  = @social_network.name
+p
+  b Client:
+  = @social_network.client_id
+
+= link_to 'Edit', edit_social_network_path(@social_network)
+'|
+= link_to 'Back', social_networks_path

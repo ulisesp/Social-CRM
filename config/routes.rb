@@ -1,5 +1,11 @@
 DemoComentarios::Application.routes.draw do
 
+  resources :social_networks
+
+  resources :facebook_data
+
+  resources :clients
+
   resources :campaigns
 
   resources :fans

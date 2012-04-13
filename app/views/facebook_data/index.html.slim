@@ -1,0 +1,117 @@
+
+= javascript_include_tag "http://code.highcharts.com/highcharts.js"
+= javascript_include_tag "http://code.highcharts.com/modules/exporting.js"
+
+h1 Listing facebook_data
+
+table border=1
+  thead
+    tr
+      td
+      - @facebook_data.each do |facebook_datum|
+        td
+          = facebook_datum.start_date.mday()
+          |  al 
+          = facebook_datum.end_date.mday()
+          |  de 
+          = facebook_datum.end_date.strftime("%B")
+  tbody
+    tr
+      td
+        | Acciones durante el periodo
+      - @facebook_data.each do |facebook_datum|
+        td
+          = facebook_datum.actions
+    tr
+      td
+        | Numero de nuevos Fans
+      - @facebook_data.each do |facebook_datum|
+        td
+          = facebook_datum.new_fans
+    tr
+      td
+        | Total de Fans
+      - @facebook_data.each do |facebook_datum|
+        td
+          = facebook_datum.total_fans
+    tr
+      td
+        | Fans Meta
+      - @facebook_data.each do |facebook_datum|
+        td
+          = facebook_datum.goal_fans
+    tr
+      td
+        | Porcentaje de crecimiento de Fans
+        - @facebook_data.each do |facebook_datum|
+          td
+            = facebook_datum.fans_growth_porcent
+          
+#container style="min-width: 400px; height: 400px; margin: 0 auto"
+
+br
+
+= link_to 'New Facebook datum', new_facebook_datum_path
+
+javascript:
+  $(function () {
+    var chart;
+    var date = "#{@dates}";
+    $(document).ready(function() {
+      chart = new Highcharts.Chart({
+          chart: {
+              renderTo: 'container',
+              type: 'line',
+              marginRight: 130,
+              marginBottom: 25
+          },
+          title: {
+              text: 'Fans',
+              x: -20 //center
+          },
+          xAxis: {
+              categories: date
+          },
+          yAxis: {
+              title: {
+                  text: ''
+              },
+              plotLines: [{
+                  value: 0,
+                  width: 1,
+                  color: '#808080'
+              }]
+          },
+          tooltip: {
+              formatter: function() {
+                      return '<b>'+ this.series.name +'</b><br/>'+
+                      this.x +': '+ this.y +'°C';
+              }
+          },
+          legend: {
+              layout: 'vertical',
+              align: 'right',
+              verticalAlign: 'top',
+              x: -10,
+              y: 100,
+              borderWidth: 0
+          },
+          series: [{
+              name: 'Nuevos Fans',
+              data: [67, 89]
+          }, {
+              name: 'Total de Fans',
+              data: [267, 389]
+          }, {
+              name: 'Objetivo Fans',
+              data: [367, 489]
+          }]
+      });
+      date = [date.slice(0,date.length-1)];
+      date = date.replace(/\,/g,'","');
+      alert(date);
+      chart.xAxis[0].setCategories([date]);
+      alert(date.replace(/\,/g,'","'));
+    });
+
+  });

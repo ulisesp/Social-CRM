@@ -1,0 +1,88 @@
+= form_for @facebook_datum do |f|
+  -if @facebook_datum.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@facebook_datum.errors.count, "error")} prohibited this facebook_datum from being saved:"
+      ul
+        - @facebook_datum.errors.full_messages.each do |msg|
+          li= msg
+
+  .field
+    = f.label :client_id
+    = f.number_field :client_id
+  .field
+    = f.label :start_date
+    = f.date_select :start_date
+  .field
+    = f.label :end_date
+    = f.date_select :end_date
+  .field
+    = f.label :actions
+    = f.text_area :actions
+  .field
+    = f.label :new_fans
+    = f.number_field :new_fans
+  .field
+    = f.label :total_fans
+    = f.number_field :total_fans
+  .field
+    = f.label :goal_fans
+    = f.number_field :goal_fans
+  .field
+    = f.label :fans_growth_porcent
+    = f.text_field :fans_growth_porcent
+  .field
+    = f.label :prints
+    = f.number_field :prints
+  .field
+    = f.label :porcentual_diferent
+    = f.text_field :porcentual_diferent
+  .field
+    = f.label :total_interactions
+    = f.number_field :total_interactions
+  .field
+    = f.label :total_reach
+    = f.number_field :total_reach
+  .field
+    = f.label :potential_reach
+    = f.number_field :potential_reach
+  .field
+    = f.label :total_prints_per_anno
+    = f.text_field :total_prints_per_anno
+  .field
+    = f.label :total_prints
+    = f.number_field :total_prints
+  .field
+    = f.label :total_clicks_anno
+    = f.number_field :total_clicks_anno
+  .field
+    = f.label :fans_through_anno
+    = f.number_field :fans_through_anno
+  .field
+    = f.label :agency_investment
+    = f.text_field :agency_investment
+  .field
+    = f.label :new_stock_investment
+    = f.text_field :new_stock_investment
+  .field
+    = f.label :anno_investment
+    = f.text_field :anno_investment
+  .field
+    = f.label :total_investment
+    = f.text_field :total_investment
+  .field
+    = f.label :cpm_prints
+    = f.text_field :cpm_prints
+  .field
+    = f.label :ctr_anno
+    = f.text_field :ctr_anno
+  .field
+    = f.label :cpm_anno
+    = f.text_field :cpm_anno
+  .field
+    = f.label :cpc_anno
+    = f.text_field :cpc_anno
+  .field
+    = f.label :fan_cost
+    = f.text_field :fan_cost
+  .actions
+    = f.submit 'Save'
