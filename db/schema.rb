@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120412174600) do
+ActiveRecord::Schema.define(:version => 20120417211559) do
 
   create_table "campaigns", :force => true do |t|
     t.date     "start_date"
@@ -35,11 +35,8 @@ ActiveRecord::Schema.define(:version => 20120412174600) do
     t.date     "end_date"
     t.text     "actions"
     t.integer  "new_fans"
-    t.integer  "total_fans"
     t.integer  "goal_fans"
-    t.float    "fans_growth_porcent"
     t.integer  "prints"
-    t.float    "porcentual_diferent"
     t.integer  "total_interactions"
     t.integer  "total_reach"
     t.integer  "potential_reach"
@@ -50,12 +47,9 @@ ActiveRecord::Schema.define(:version => 20120412174600) do
     t.float    "agency_investment"
     t.float    "new_stock_investment"
     t.float    "anno_investment"
-    t.float    "total_investment"
-    t.float    "cpm_prints"
     t.float    "ctr_anno"
     t.float    "cpm_anno"
     t.float    "cpc_anno"
-    t.float    "fan_cost"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
