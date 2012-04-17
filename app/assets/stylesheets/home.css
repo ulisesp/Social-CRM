@@ -110,11 +110,19 @@ a:hover {
 	color: #666;
 }
 
-.button_sing_in input {
+.button_sing_in {
 	width: 75px;
 	float: right;
 	font-family: Arial;
 	line-height: 18px;
+	margin-top: 8px;
+}
+
+.links {
+    width: 135px;
+    line-height: 16px;
+    overflow: hidden;
+    float: left;
 }
 
 .menu_principal {

@@ -1,8 +1,8 @@
-h1 Listing clients
+h1 Listado de clientes
 
 table
   tr
-    th Name
+    th Nombre
     th
     th
     th
@@ -10,10 +10,10 @@ table
   - @clients.each do |client|
     tr
       td= client.name
-      td= link_to 'Show', client
-      td= link_to 'Edit', edit_client_path(client)
-      td= link_to 'Destroy', client, :confirm => 'Are you sure?', :method => :delete
+      td= link_to 'Ver datos', client
+      td= link_to 'Editar Cliente', edit_client_path(client)
+      td= link_to 'Eliminar Datos', client, :confirm => 'Estas seguro?', :method => :delete
 
 br
 
-= link_to 'New Client', new_client_path
+= link_to 'Agregar nuevo cliente', new_client_path

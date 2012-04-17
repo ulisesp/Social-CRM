@@ -6,10 +6,6 @@ DemoComentarios::Application.routes.draw do
 
   resources :clients
 
-  resources :campaigns
-
-  resources :fans
-
   resources :rols
 
   root :to => "home#index"

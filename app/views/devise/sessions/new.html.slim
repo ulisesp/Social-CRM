@@ -1,0 +1,23 @@
+#homePage
+  h2
+    | Iniciar Sesión
+
+  = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
+    = f.label :email, :class => 'email_label'
+    br
+    = f.email_field :email, :class => 'email_input'
+    br
+    = f.label :password, :class => 'pass_label'
+    br
+    = f.password_field :password, :class => 'pass_input'
+    br 
+    br
+    .links
+      = render :partial => "devise/shared/links"
+    = f.submit "Iniciar", :class => "button_sing_in"
+    
+
+
+    
+
+    

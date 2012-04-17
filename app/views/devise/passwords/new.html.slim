@@ -1,0 +1,16 @@
+#homePage
+  h3.signInLabel
+    | Olvidate tu contraseña?
+
+  = form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f|
+    = devise_error_messages!
+
+    div
+      = f.label :email, :class => 'email_label'
+      br
+      = f.email_field :email, :class => 'email_input'
+
+    div
+      = f.submit "Send me reset password instructions"
+
+  = render :partial => "devise/shared/links"
