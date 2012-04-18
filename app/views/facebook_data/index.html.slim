@@ -25,10 +25,7 @@ script
   - @facebook_data.each do |facebook_datum|
     = facebook_datum.new_fans
     | ,
-  | ]}, {name: 'Total de Fans', data: [
-  - @facebook_data.each do |facebook_datum|
-    = facebook_datum.total_fans
-    | ,
+
   | ]}, {name: 'Objetivo Fans',data: [
   - @facebook_data.each do |facebook_datum|
     = facebook_datum.goal_fans
@@ -62,22 +59,10 @@ table border=1
           = facebook_datum.new_fans
     tr
       td
-        | Total de Fans
-      - @facebook_data.each do |facebook_datum|
-        td
-          = facebook_datum.total_fans
-    tr
-      td
         | Fans Meta
       - @facebook_data.each do |facebook_datum|
         td
           = facebook_datum.goal_fans
-    tr
-      td
-        | Porcentaje de crecimiento de Fans
-        - @facebook_data.each do |facebook_datum|
-          td
-            = facebook_datum.fans_growth_porcent
           
 #container style="min-width: 400px; height: 400px; margin: 0 auto"
 
