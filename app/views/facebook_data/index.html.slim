@@ -25,7 +25,10 @@ script
   - @facebook_data.each do |facebook_datum|
     = facebook_datum.new_fans
     | ,
-
+  | ]}, {name: 'Fans Reales',data: [
+  - @facebook_data.each do |facebook_datum|
+    = facebook_datum.total_fans
+    | ,
   | ]}, {name: 'Objetivo Fans',data: [
   - @facebook_data.each do |facebook_datum|
     = facebook_datum.goal_fans
@@ -53,16 +56,158 @@ table border=1
           = facebook_datum.actions
     tr
       td
-        | Numero de nuevos Fans
+        | # nuevos fans
       - @facebook_data.each do |facebook_datum|
         td
           = facebook_datum.new_fans
     tr
       td
-        | Fans Meta
+        | #fans reales
+      - @facebook_data.each do |facebook_datum|
+        td
+          = facebook_datum.total_fans
+
+    tr
+      td
+        | Objetivo fans
       - @facebook_data.each do |facebook_datum|
         td
           = facebook_datum.goal_fans
+
+    tr
+      td
+        | % crecimiento fans
+      - @facebook_data.each do |facebook_datum|
+        td
+          = FacebookDatum.get_fan_growth_percentage(facebook_datum)
+
+    tr
+      td
+        | # impresiones
+      - @facebook_data.each do |facebook_datum|
+        td
+          = facebook_datum.prints
+    tr
+      td
+        | % diferencia
+      - @facebook_data.each do |facebook_datum|
+        td
+          = FacebookDatum.get_print_percentage(facebook_datum)
+    tr
+      td
+        | # interacciones
+      - @facebook_data.each do |facebook_datum|
+        td
+          = facebook_datum.total_interactions
+    tr
+      td
+        | % diferencia
+      - @facebook_data.each do |facebook_datum|
+        td
+          = FacebookDatum.get_interactions_percentage(facebook_datum)
+
+    tr
+      td
+        | Alcance total
+      - @facebook_data.each do |facebook_datum|
+        td
+          = facebook_datum.total_reach
+
+    tr
+      td
+        | Alcance potencial
+      - @facebook_data.each do |facebook_datum|
+        td
+          = facebook_datum.potential_reach
+
+    tr
+      td
+        | # impresiones anuncios (por cien)
+      - @facebook_data.each do |facebook_datum|
+        td
+          = facebook_datum.total_prints_per_anno
+
+    tr
+      td
+        | # impresiones totales
+      - @facebook_data.each do |facebook_datum|
+        td
+          = facebook_datum.total_prints
+    tr
+      td
+        | # clics anuncios
+      - @facebook_data.each do |facebook_datum|
+        td
+          = facebook_datum.total_clicks_anno
+    tr
+      td
+        | # fans atraves de anuncios
+      - @facebook_data.each do |facebook_datum|
+        td
+          = facebook_datum.fans_through_anno
+
+    tr
+      td
+        | Inversion agencia
+      - @facebook_data.each do |facebook_datum|
+        td
+          = facebook_datum.agency_investment
+
+    tr
+      td
+        | Inversion nuevas acciones
+      - @facebook_data.each do |facebook_datum|
+        td
+          = facebook_datum.new_stock_investment
+
+    tr
+      td
+        | Inversion anuncios
+      - @facebook_data.each do |facebook_datum|
+        td
+          = facebook_datum.anno_investment
+    tr
+      td
+        | Inversion total
+      - @facebook_data.each do |facebook_datum|
+        td
+          = FacebookDatum.get_total_investment(facebook_datum)
+    tr
+      td
+        | CPM impresion/interaccion
+      - @facebook_data.each do |facebook_datum|
+        td
+          = FacebookDatum.get_cpm(facebook_datum)
+    tr
+      td
+        | CTR anuncios
+      - @facebook_data.each do |facebook_datum|
+        td
+          = facebook_datum.ctr_anno
+
+    tr
+      td
+        | CPM anuncios
+      - @facebook_data.each do |facebook_datum|
+        td
+          = facebook_datum.cpm_anno
+
+    tr
+      td
+        | CPC anuncios
+      - @facebook_data.each do |facebook_datum|
+        td
+          = facebook_datum.cpc_anno
+
+    tr
+      td
+        | Coste fan
+      - @facebook_data.each do |facebook_datum|
+        td
+          = FacebookDatum.get_fan_cost(facebook_datum)
+
+
+
           
 #container style="min-width: 400px; height: 400px; margin: 0 auto"
 

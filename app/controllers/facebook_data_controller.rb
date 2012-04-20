@@ -46,7 +46,12 @@ class FacebookDataController < ApplicationController
   # POST /facebook_data.json
   def create
     @facebook_datum = FacebookDatum.new(params[:facebook_datum])
-
+    if FacebookDatum.all.first == nil
+      @facebook_datum.total_fans = 151261
+    else
+      @facebook_datum.total_fans = @facebook_datum.new_fans + FacebookDatum.all.last.total_fans
+    end
+    
     respond_to do |format|
       if @facebook_datum.save
         format.html { redirect_to @facebook_datum, notice: 'Facebook datum was successfully created.' }

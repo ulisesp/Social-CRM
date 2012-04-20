@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(:version => 20120417211559) do
     t.float    "cpc_anno"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "total_fans"
   end
 
   create_table "fans", :force => true do |t|
