@@ -6,7 +6,7 @@ h1 Listing facebook_data
 
 script 
   | $(function () { var chart; var date = "#{@dates}"; $(document).ready(function() { chart = new Highcharts.Chart({
-  | chart: {renderTo: 'container', type: 'line', marginRight: 130, marginBottom: 25 },
+  | chart: {renderTo: 'container_fans', type: 'line', marginRight: 130, marginBottom: 25 },
   | title: {text: 'Fans', x: -20 },
   | xAxis: {categories: [
   - @facebook_data.each do |facebook_datum|
@@ -35,6 +35,100 @@ script
     | ,
   | ]}]
   | });});});
+
+  | $(function () { var chart; var date = "#{@dates}"; $(document).ready(function() { chart = new Highcharts.Chart({
+  | chart: {renderTo: 'container_interactivity', type: 'line', marginRight: 130, marginBottom: 25 },
+  | title: {text: 'Interactividad', x: -20 },
+  | xAxis: {categories: [
+  - @facebook_data.each do |facebook_datum|
+    | '
+    = facebook_datum.start_date.mday()
+    |  al 
+    = facebook_datum.end_date.mday()
+    |  de 
+    = facebook_datum.end_date.strftime("%B")
+    | ',
+  | ] },
+  | yAxis: {title: {text: 'Datos' },plotLines: [{ value: 0, width: 1, color: '#808080' }]},
+  | tooltip: {formatter: function() {return '<b>'+ this.series.name +'</b><br/>'+ this.x +': '+ this.y;}},
+  | legend: {layout: 'vertical',align: 'right',verticalAlign: 'top',x: -10,y: 100,borderWidth: 0 },
+  | series: [{name: '# impresiones', data: [
+  - @facebook_data.each do |facebook_datum|
+    = facebook_datum.prints
+    | ,
+  | ]}, {name: '# interacciones',data: [
+  - @facebook_data.each do |facebook_datum|
+    = facebook_datum.total_interactions
+    | ,
+  | ]}, {name: '# impresiones anuncios (por cien)',data: [
+  - @facebook_data.each do |facebook_datum|
+    = facebook_datum.total_prints_per_anno
+    | ,
+  | ]}]
+  | });});});
+
+  | $(function () { var chart; var date = "#{@dates}"; $(document).ready(function() { chart = new Highcharts.Chart({
+  | chart: {renderTo: 'container_investment_growth', type: 'line', marginRight: 130, marginBottom: 25 },
+  | title: {text: 'Crecimiento con Inversiones', x: -20 },
+  | xAxis: {categories: [
+  - @facebook_data.each do |facebook_datum|
+    | '
+    = facebook_datum.start_date.mday()
+    |  al 
+    = facebook_datum.end_date.mday()
+    |  de 
+    = facebook_datum.end_date.strftime("%B")
+    | ',
+  | ] },
+  | yAxis: {title: {text: 'Datos' },plotLines: [{ value: 0, width: 1, color: '#808080' }]},
+  | tooltip: {formatter: function() {return '<b>'+ this.series.name +'</b><br/>'+ this.x +': '+ this.y;}},
+  | legend: {layout: 'vertical',align: 'right',verticalAlign: 'top',x: -10,y: 100,borderWidth: 0 },
+  | series: [{name: '# fans reales', data: [
+  - @facebook_data.each do |facebook_datum|
+    = facebook_datum.total_fans
+    | ,
+  | ]}, {name: 'Inversion total',data: [
+  - @facebook_data.each do |facebook_datum|
+    = FacebookDatum.get_total_investment(facebook_datum)	
+    | ,
+  | ]}]
+  | });});});
+
+  | $(function () { var chart; var date = "#{@dates}"; $(document).ready(function() { chart = new Highcharts.Chart({
+  | chart: {renderTo: 'container_costs', type: 'line', marginRight: 130, marginBottom: 25 },
+  | title: {text: 'Costes', x: -20 },
+  | xAxis: {categories: [
+  - @facebook_data.each do |facebook_datum|
+    | '
+    = facebook_datum.start_date.mday()
+    |  al 
+    = facebook_datum.end_date.mday()
+    |  de 
+    = facebook_datum.end_date.strftime("%B")
+    | ',
+  | ] },
+  | yAxis: {title: {text: 'Datos' },plotLines: [{ value: 0, width: 1, color: '#808080' }]},
+  | tooltip: {formatter: function() {return '<b>'+ this.series.name +'</b><br/>'+ this.x +': '+ this.y;}},
+  | legend: {layout: 'vertical',align: 'right',verticalAlign: 'top',x: -10,y: 100,borderWidth: 0 },
+  | series: [{name: 'CPM impresion/interaccion', data: [
+  - @facebook_data.each do |facebook_datum|
+    = FacebookDatum.get_cpm(facebook_datum)
+    | ,
+  | ]}, {name: 'CTR anuncios',data: [
+  - @facebook_data.each do |facebook_datum|
+    = facebook_datum.ctr_anno	
+    | ,
+  | ]}, {name: 'CPM anuncios',data: [
+  - @facebook_data.each do |facebook_datum|
+    = facebook_datum.cpm_anno	
+    | ,
+  | ]}, {name: 'CPC anuncios',data: [
+  - @facebook_data.each do |facebook_datum|
+    = facebook_datum.cpc_anno	
+    | ,
+  | ]}]
+  | });});});
+
 
 table border=1
   thead
@@ -209,7 +303,10 @@ table border=1
 
 
           
-#container style="min-width: 400px; height: 400px; margin: 0 auto"
+#container_fans style="min-width: 400px; height: 400px; margin: 0 auto"
+#container_interactivity style="min-width: 400px; height: 400px; margin: 0 auto"
+#container_investment_growth style="min-width: 400px; height: 400px; margin: 0 auto"
+#container_costs style="min-width: 400px; height: 400px; margin: 0 auto"
 
 br
 
