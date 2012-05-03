@@ -1,7 +1,7 @@
 - if !user_signed_in?
   #homePage
     h3.signInLabel
-      | Inicia tu sesión
+      | Inicia tu sesion
 
     = form_for(@login_resource, :as => "user", :url => session_path("user")) do |f|
       = f.label :email, :class => 'email_label'

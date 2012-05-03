@@ -10,46 +10,46 @@ Feature: Sign up
 
     Scenario: User signs up with valid data
       And I fill in the following:
-        | Name                  | Testy McUserton |
+        | Nombre                  | Testy McUserton |
         | Email                 | user@test.com   |
-        | Password              | please          |
-        | Password confirmation | please          |
+        | Contraseña              | please          |
+        | Confirmación de Contraseña | please          |
       And I press "Sign up"
       Then I should see "Welcome! You have signed up successfully." 
       
     Scenario: User signs up with invalid email
       And I fill in the following:
-        | Name                  | Testy McUserton |
+        | Nombre                  | Testy McUserton |
         | Email                 | invalidemail    |
-        | Password              | please          |
-        | Password confirmation | please          |
+        | Contraseña              | please          |
+        | Confirmación de Contraseña | please          |
       And I press "Sign up"
       Then I should see "Email is invalid"
 
     Scenario: User signs up without password
       And I fill in the following:
-        | Name                  | Testy McUserton |
+        | Nombre                  | Testy McUserton |
         | Email                 | user@test.com   |
-        | Password              |                 |
-        | Password confirmation | please          |
+        | Contraseña              |                 |
+        | Confirmación de Contraseña | please          |
       And I press "Sign up"
       Then I should see "Password can't be blank"
 
     Scenario: User signs up without password confirmation
       And I fill in the following:
-        | Name                  | Testy McUserton |
+        | Nombre                  | Testy McUserton |
         | Email                 | user@test.com   |
-        | Password              | please          |
-        | Password confirmation |                 |
+        | Contraseña              | please          |
+        | Confirmación de Contraseña |                 |
       And I press "Sign up"
       Then I should see "Password doesn't match confirmation"
 
     Scenario: User signs up with mismatched password and confirmation
       And I fill in the following:
-        | Name                  | Testy McUserton |
+        | Nombre                  | Testy McUserton |
         | Email                 | user@test.com   |
-        | Password              | please          |
-        | Password confirmation | please1         |
+        | Contraseña              | please          |
+        | Confirmación de Contraseña | please1         |
       And I press "Sign up"
       Then I should see "Password doesn't match confirmation"
 

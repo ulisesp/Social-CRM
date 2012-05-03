@@ -10,7 +10,7 @@ Given /^I am a user named "([^"]*)" with an email "([^"]*)" and password "([^"]*
 end
 
 Then /^I should be already signed in$/ do
-  And %{I should see "Logout"}
+  And %{I should see "Desconectar"}
 end
 
 Given /^I am signed up as "(.*)\/(.*)"$/ do |email, password|
@@ -41,11 +41,11 @@ When /^I sign in as "(.*)\/(.*)"$/ do |email, password|
   When %{I go to the sign in page}
   And %{I fill in "Email" with "#{email}"}
   And %{I fill in "Password" with "#{password}"}
-  And %{I press "Sign in"}
+  And %{I press "Iniciar"}
 end
 
 Then /^I should be signed in$/ do
-  Then %{I should see "Signed in successfully."}
+  Then %{I should see "Desconectar"}
 end
 
 When /^I return next time$/ do
@@ -53,7 +53,7 @@ When /^I return next time$/ do
 end
 
 Then /^I should be signed out$/ do
-  And %{I should see "Sign up"}
-  And %{I should see "Login"}
-  And %{I should not see "Logout"}
+  And %{I should see "Inicia tu sesion"}
+  And %{I should see "Registrate"}
+  And %{I should not see "Desconectar"}
 end

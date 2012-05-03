@@ -5,7 +5,7 @@ gem 'rails', '3.1.0'
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 gem "therubyracer", :require => 'v8'
-
+gem 'activesupport', '3.1.0'
 gem 'mysql2'
 #gem 'pg'
 
